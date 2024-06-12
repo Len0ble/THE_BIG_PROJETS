@@ -1,0 +1,24 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="../assets/stylesheets/application.css">
+
+
+<h1>Éditer le Potin</h1>
+
+<%= form_with model: @potin, url: potin_path(@potin), method: :patch, local: true do |form| %>
+  <div class="field mb-3 w-25 m-auto pt-3">
+    <%= form.label :author, 'Auteur', class: 'form-label' %>
+    <%= form.text_field :author, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3 w-25 m-auto pt-3">
+    <%= form.label :content, 'Contenu', class: 'form-label' %>
+    <%= form.text_area :content, class: 'form-control', rows: 3 %>
+  </div>
+
+  <div class="actions w-25 m-auto">
+    <%= form.submit 'Mettre à jour', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

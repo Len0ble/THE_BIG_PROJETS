@@ -1,0 +1,41 @@
+
+
+<h1>Sign up</h1>
+
+<%= form_with(model: @user, url: signup_path, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :prenom %>
+    <%= f.text_field :prenom, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :nom %>
+    <%= f.text_field :nom %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :city_id %>
+    <%= f.collection_select :city_id, City.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
